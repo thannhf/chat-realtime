@@ -1,4 +1,3 @@
-# chat-realtime
 # Chat Realtime Application
 
 Một dự án cá nhân mã nguồn mở (Public Version) nhằm xây dựng hệ thống trò chuyện trực tuyến thời gian thực hiệu năng cao. Dự án được phát triển với mục tiêu học tập, tối ưu hóa tư duy kiến trúc và làm sản phẩm điểm nhấn trong hồ sơ năng lực (CV) của mình.
