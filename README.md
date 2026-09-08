@@ -31,6 +31,11 @@ Dự án được xây dựng dựa trên những công nghệ và thư viện m
 - **Database:** **PostgreSQL** (Lưu trữ dữ liệu tin nhắn, người dùng bền vững).
 - **Caching:** **Redis** (Tăng tốc độ truy vấn, quản lý session và hỗ trợ cơ chế realtime).
 
+### API & PORT:
+- **USER_SERVICE_URL="http://localhost:8001"
+- **CHAT_SERVICE_URL="http://localhost:8081"
+- **MEDIA_SERVICE_URL="http://localhost:8083"
+- **API_GATEWAY="http://localhost:8080"
 ---
 
 ## Khuyến khích đóng góp & Góp ý (Contributing)
