@@ -1,0 +1,9 @@
+go 1.26.4
+
+use (
+	./common
+	./services/api-gateway
+	./services/chat-service
+	./services/media-service
+	./services/user-service
+)

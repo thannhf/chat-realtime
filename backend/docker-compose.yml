@@ -1,0 +1,59 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: chat_db
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  user-service:
+    build: ./services/user-service
+    ports:
+      - "8001:8001"
+    depends_on:
+      - postgres
+
+  chat-service:
+    build: ./services/chat-service
+    ports:
+      - "8002:8002"
+    depends_on:
+      - postgres
+      - redis
+
+  media-service:
+    build: ./services/media-service
+    ports:
+      - "8003:8003"
+
+
+# bản 2
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: chatapp_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: chatapp_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:alpine
+    container_name: chatapp_redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--maxmemory", "100mb", "--maxmemory-policy", "allkeys-lru"]
+    
+volumes:
+  pgdata:
